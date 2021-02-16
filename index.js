@@ -2,6 +2,8 @@ const fetch = require('node-fetch');
 const wallpaper = require('wallpaper');
 const fs = require('fs').promises;
 
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
 const DOWNLINK_SOURCES = 'https://downlinkapp.com/sources.json';
 const MAP = 'Continental US';
 const WALLPAPER_FILE = 'wallpaper.jpg';
