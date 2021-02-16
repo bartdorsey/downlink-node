@@ -9,6 +9,7 @@ const MAP = 'Continental US';
 const WALLPAPER_FILE = 'wallpaper.jpg';
 
 async function init() {
+  console.log("Fetching sources...");
   const { sources } = await getDownlinkSources();
   const map = sources.find(source => {
     return source.name === MAP;
@@ -18,6 +19,7 @@ async function init() {
 }
 
 async function getWallpaper(url) {
+  console.log(`Getting wallpaper from ${url}`);
   try {
     const response = await fetch(url);
   
@@ -31,6 +33,7 @@ async function getWallpaper(url) {
 }
 
 async function setWallpaper() {
+  console.log("Setting Wallpaper...");
   try {
     await wallpaper.set('wallpaper.jpg');
   } 
